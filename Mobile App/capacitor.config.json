@@ -1,0 +1,9 @@
+{
+  "appId": "com.adi.adinews",
+  "appName": "AdiNews",
+  "webDir": "public",
+  "server": {
+    "url": "https://adinews.onrender.com/",
+    "cleartext": true
+  }
+}

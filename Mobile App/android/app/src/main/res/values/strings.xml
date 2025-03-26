@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AdiNews</string>
+    <string name="title_activity_main">AdiNews</string>
+    <string name="package_name">com.adi.adinews</string>
+    <string name="custom_url_scheme">com.adi.adinews</string>
+</resources>
