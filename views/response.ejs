@@ -29,9 +29,14 @@
     <div class="text-container">
         <%- formattedNews %>
     </div>
-    <script>
-        window.addEventListener("popstate", function (event) {
-            window.location.href = "/"; // Redirect to home page
+    <script type="module">
+        import { App } from '@capacitor/app';
+        App.addListener('backButton', ({ canGoBack }) => {
+            if (canGoBack) {
+                window.history.back();
+            } else {
+                App.exitApp();
+            }
         });
     </script>
 </body>
