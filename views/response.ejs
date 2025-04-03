@@ -29,16 +29,6 @@
     <div class="text-container">
         <%- formattedNews %>
     </div>
-    <script type="module">
-        import { App } from '@capacitor/app';
-        App.addListener('backButton', ({ canGoBack }) => {
-            if (canGoBack) {
-                window.history.back();
-            } else {
-                App.exitApp();
-            }
-        });
-    </script>
 </body>
 
 </html>
