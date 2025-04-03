@@ -29,6 +29,11 @@
     <div class="text-container">
         <%- formattedNews %>
     </div>
+    <script>
+        window.addEventListener("popstate", function (event) {
+            window.location.href = "/"; // Redirect to home page
+        });
+    </script>
 </body>
 
 </html>
