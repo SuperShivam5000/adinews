@@ -27,7 +27,7 @@ app.post('/topheadlines', (req, res) => {
   }).then(async news => {
     if(news.totalResults == 0) res.render("response", { formattedNews: "No relevant articles found.", title: "Top Headlines" });
     else {
-      const prompt = "Organize and elaborate these news. Combine news from all available sources to eliminate bias, if multiple sources are available. Everything must be in it's source language. " + prepareNewsPrompt(news);
+      const prompt = "Organize and elaborate these news. Combine news from all available sources to eliminate bias, if multiple sources are available. " + prepareNewsPrompt(news);
       const newsSummary = await model.generateContent(prompt);
       const formattedNews = marked(newsSummary.response.text());
       res.render("response", { formattedNews: formattedNews, title: "Top Headlines" });
