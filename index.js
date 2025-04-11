@@ -46,6 +46,7 @@ app.post('/newsfinder', (req, res) => {
   }).then(async news => {
     if(news.totalResults == 0) res.render("response", { formattedNews: "No relevant articles found.", title: "News Finder" });
     else {
+      if (!language) language = "en";
       const prompt = "Organize and elaborate these news. Combine news from all available sources to eliminate bias, if multiple sources are available. Everything must be in " + language + " language. " + prepareNewsPrompt(news);
       const newsSummary = await model.generateContent(prompt);
       const formattedNews = marked(newsSummary.response.text());
